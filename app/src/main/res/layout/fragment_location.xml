@@ -27,7 +27,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginLeft="12dp"
         android:backgroundTint="#EAEAEA"
@@ -38,29 +38,52 @@
         >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/black_location"
                 android:layout_margin="6dp"
-                />
+                android:src="@drawable/black_location" />
 
             <TextView
-                android:id="@+id/name_location"
+                android:id="@+id/city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/amaranth"
-                android:text="Ha Noi-Viet Nam"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="4dp"
-                android:textSize="24sp"
-                android:textColor="@color/black"/>
+                android:fontFamily="@font/amaranth"
+                android:text="Ha Noi"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/space"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/amaranth"
+                android:text="-"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/amaranth"
+                android:text="Viet Nam"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="130dp"

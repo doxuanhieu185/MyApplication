@@ -1,18 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".inforFragment"
-    android:background="#82F4EA">
+    android:orientation="vertical"
+    android:background="#F3F3F3">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="infor Fragment"
-        android:textSize="30dp"
         android:layout_gravity="center"
-        />
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"
+        android:text="Profile"
+        android:textSize="30sp" />
 
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#F6B5B5"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hieudeptrai" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center"
+        android:id="@+id/fullname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do Xuan Hieu"
+        android:textStyle="bold"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dohieu825@gmail.com" />
+
+</LinearLayout>
