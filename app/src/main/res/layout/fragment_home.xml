@@ -203,7 +203,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/baloo_bhaina"
-                android:text="ceiling fan"
+                android:text="Ceiling fan"
                 android:textSize="20sp"
                 android:layout_gravity="center_vertical"/>
 

@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,10 +49,8 @@ public class locationfragment extends Fragment {
     TextView city;
     TextView latitude;
     TextView longitude;
-    Button getLocation;
-
-    private final static int REQUEST_CODE = 100;
-
+    TextView temperature;
+    ImageView weatherIcon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,14 +63,12 @@ public class locationfragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_location,container,false);
         country = view.findViewById(R.id.country);
         city = view.findViewById(R.id.city);
+        temperature = view.findViewById(R.id.temperature);
+        weatherIcon = view.findViewById(R.id.weatherIcon);
 
 
         client = LocationServices.getFusedLocationProviderClient(getActivity());
         //check condition
-
-//        getLocation.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
 //                // check condition
         if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) ==
                 PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -83,11 +80,8 @@ public class locationfragment extends Fragment {
         }
 
 
-//            }
-//        });
 
 
-//        return inflater.inflate(R.layout.fragment_location, container, false);
         return view;
     }
 
@@ -127,8 +121,13 @@ public class locationfragment extends Fragment {
                         List<Address> address = null;
                         try {
                             address = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-                            city.setText(address.get(0).getLocality());
+
                             country.setText(address.get(0).getCountryName());
+                            if(address.get(0).getLocality() != null && address.get(0).getLocality().length() > 0)
+                            {
+                                city.setText(address.get(0).getLocality());
+                            }
+
 
                         } catch (IOException e) {
                             throw new RuntimeException(e);
